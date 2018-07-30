@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 明年今日
-subtitle:
-description: 路漫漫其修远兮，吾将上下而求索。。。
-author: 周
+title: 无标题
+subtitle: 小标题为空
+description: 描述内容为空
+author: 无
 language: zh-Hans
-timezone:
+timezone: 
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
