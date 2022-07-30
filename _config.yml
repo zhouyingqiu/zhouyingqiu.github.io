@@ -64,7 +64,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: next
+theme: yilia
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
@@ -74,4 +74,4 @@ deploy:
   type: git
   repository:
     github: git@github.com:zhouyingqiu/zhouyingqiu.github.io.git,master
-    coding: git@git.coding.net:z_xxxxxx/z_xxxxxx.git,master
+    coding: git@e.coding.net:z_xxxxxx/z_xxxxxx.git,master
