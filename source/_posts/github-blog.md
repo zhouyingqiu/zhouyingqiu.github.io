@@ -2,6 +2,7 @@ title: 利用github和hexo建立个人博客
 date: 2017-03-04 16:38:29
 update: 2022-08-01 18:30:00
 categories: 技术
+abstract: 利用github pages建立个人博客
 tags: 技术
 ---
 
@@ -30,4 +31,7 @@ tags: 技术
              ![alt](/img/ignore.png)
         3. 推送hexo分支
     > 这样以后我们在客户端就只用在hexo分支更新操作就可以了，就算换了电脑环境，也只用同步hexo分支代码
+
+
+* 2022更新，coding被收购以后pages服务没有了，等有时间会换成码云，因为github访问速度太慢了
 

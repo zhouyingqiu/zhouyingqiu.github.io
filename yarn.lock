@@ -1063,6 +1063,11 @@ hexo-auto-excerpt@^1.1.2:
   dependencies:
     html-to-text "^3.3.0"
 
+hexo-blog-encrypt@^3.1.6:
+  version "3.1.6"
+  resolved "https://mirrors.tencent.com/npm/hexo-blog-encrypt/-/hexo-blog-encrypt-3.1.6.tgz#953db1b2c8f415a7224db23a02cae7a063a65fe2"
+  integrity sha512-aq/KiuwoHLTMOOw0WiVtoTpPfx5x5mjkGJAJgKOp7gH0fjW4Pt1uT2n2MOVWBwY2q3qLtWq60na8RL5qmzZL1w==
+
 hexo-bunyan@^1.0.0:
   version "1.0.0"
   resolved "https://mirrors.tencent.com/npm/hexo-bunyan/-/hexo-bunyan-1.0.0.tgz#b2106b26547b232f0195db863cb5d5ff8527fd36"
