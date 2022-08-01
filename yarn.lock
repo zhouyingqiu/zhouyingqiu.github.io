@@ -1051,6 +1051,18 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
+he@^1.0.0:
+  version "1.2.0"
+  resolved "https://mirrors.cloud.tencent.com/npm/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
+  integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
+
+hexo-auto-excerpt@^1.1.2:
+  version "1.1.2"
+  resolved "https://mirrors.tencent.com/npm/hexo-auto-excerpt/-/hexo-auto-excerpt-1.1.2.tgz#d19d3449e4c4c164c629a5641a2e688fff9aace3"
+  integrity sha512-Gj6TJhp/Vk6XrE44CiDl3qjSZsp2J9T6lv70EjDGOoDmNNQRcdvP2B/zVoe8co7mJt8YwD6sPNppIxQc/8KCGQ==
+  dependencies:
+    html-to-text "^3.3.0"
+
 hexo-bunyan@^1.0.0:
   version "1.0.0"
   resolved "https://mirrors.tencent.com/npm/hexo-bunyan/-/hexo-bunyan-1.0.0.tgz#b2106b26547b232f0195db863cb5d5ff8527fd36"
@@ -1295,7 +1307,18 @@ html-entities@^1.2.0:
   resolved "https://mirrors.cloud.tencent.com/npm/html-entities/-/html-entities-1.4.0.tgz#cfbd1b01d2afaf9adca1b10ae7dffab98c71d2dc"
   integrity sha512-8nxjcBcd8wovbeKx7h3wTji4e6+rhaVuPNpMqwWgnHh+N9ToqsCs6XztWRBPQ+UtzsoMAdKZtUENoVzU/EMtZA==
 
-htmlparser2@^3.9.1:
+html-to-text@^3.3.0:
+  version "3.3.0"
+  resolved "https://mirrors.tencent.com/npm/html-to-text/-/html-to-text-3.3.0.tgz#6a9b63c699b885bb7ba84b1446bfe6876bbfcfb7"
+  integrity sha1-aptjxpm4hbt7qEsURr/mh2u/z7c=
+  dependencies:
+    he "^1.0.0"
+    htmlparser2 "^3.9.2"
+    optimist "^0.6.1"
+    underscore "^1.8.3"
+    underscore.string "^3.2.3"
+
+htmlparser2@^3.9.1, htmlparser2@^3.9.2:
   version "3.10.1"
   resolved "https://mirrors.cloud.tencent.com/npm/htmlparser2/-/htmlparser2-3.10.1.tgz#bd679dc3f59897b6a34bb10749c855bb53a9392f"
   integrity sha512-IgieNijUMbkDovyoKObU1DUhm1iwNYE/fuifEoEHfd1oZKZDaONBSkal7Y01shxsM49R4XaMdGez3WnF9UfiCQ==
@@ -2025,7 +2048,7 @@ opn@^4.0.0:
     object-assign "^4.0.1"
     pinkie-promise "^2.0.0"
 
-optimist@~0.6:
+optimist@^0.6.1, optimist@~0.6:
   version "0.6.1"
   resolved "https://mirrors.tencent.com/npm/optimist/-/optimist-0.6.1.tgz#da3ea74686fa21a19a111c326e90eb15a0196686"
   integrity sha1-2j6nRob6IaGaERwybpDrFaAZZoY=
@@ -2409,7 +2432,7 @@ split-string@^3.0.1, split-string@^3.0.2:
   dependencies:
     extend-shallow "^3.0.0"
 
-sprintf-js@^1.0.2:
+sprintf-js@^1.0.2, sprintf-js@^1.1.1:
   version "1.1.2"
   resolved "https://mirrors.cloud.tencent.com/npm/sprintf-js/-/sprintf-js-1.1.2.tgz#da1765262bf8c0f571749f2ad6c26300207ae673"
   integrity sha512-VE0SOVEHCk7Qc8ulkWw3ntAzXuqf7S2lvwQaDLRnUeIEaKNQJzV6BwmLKhOqT61aGhfUMrXeaBk+oDGCzvhcug==
@@ -2630,6 +2653,19 @@ uglify-to-browserify@~1.0.0:
   resolved "https://mirrors.tencent.com/npm/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz#6e0924d6bda6b5afe349e39a6d632850a0f882b7"
   integrity sha1-bgkk1r2mta/jSeOabWMoUKD4grc=
 
+underscore.string@^3.2.3:
+  version "3.3.6"
+  resolved "https://mirrors.cloud.tencent.com/npm/underscore.string/-/underscore.string-3.3.6.tgz#ad8cf23d7423cb3b53b898476117588f4e2f9159"
+  integrity sha512-VoC83HWXmCrF6rgkyxS9GHv8W9Q5nhMKho+OadDJGzL2oDYbYEppBaCMH6pFlwLeqj2QS+hhkw2kpXkSdD1JxQ==
+  dependencies:
+    sprintf-js "^1.1.1"
+    util-deprecate "^1.0.2"
+
+underscore@^1.8.3:
+  version "1.13.4"
+  resolved "https://mirrors.cloud.tencent.com/npm/underscore/-/underscore-1.13.4.tgz#7886b46bbdf07f768e0052f1828e1dcab40c0dee"
+  integrity sha512-BQFnUDuAQ4Yf/cYY5LNrK9NCJFKriaRbD9uR1fTeXnBeoa97W0i41qkZfGO9pSo8I5KzjAcSY2XYtdf0oKd7KQ==
+
 union-value@^1.0.0:
   version "1.0.1"
   resolved "https://mirrors.cloud.tencent.com/npm/union-value/-/union-value-1.0.1.tgz#0b6fe7b835aecda61c6ea4d4f02c14221e109847"
@@ -2673,7 +2709,7 @@ use@^3.1.0:
   resolved "https://mirrors.cloud.tencent.com/npm/use/-/use-3.1.1.tgz#d50c8cac79a19fbc20f2911f56eb973f4e10070f"
   integrity sha512-cwESVXlO3url9YWlFW/TA9cshCEhtu7IKJ/p5soJ/gGpj7vbvFrAY/eIioQ6Dw23KjZhYgiIo8HOs1nQ2vr/oQ==
 
-util-deprecate@^1.0.1, util-deprecate@~1.0.1:
+util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://mirrors.tencent.com/npm/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=

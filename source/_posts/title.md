@@ -1,5 +1,6 @@
 title: 利用github和hexo建立个人博客
 date: 2017-03-04 16:38:29
+update: 2022-08-01 18:30:00
 categories: 技术
 tags: 技术
 ---
@@ -7,20 +8,26 @@ tags: 技术
 
 
 ### 利用github建立个人博客
-- 总体来说还是比较顺利，没有超过一天时间，在coding和github上都可以访问到博客了，参考的教程网址是[基于Hexo+github+coding](http://ookamiantd.top/2017/build-blog-hexo-base/)
+- 总体来说还是比较顺利，没有超过一天时间，在coding和github上都可以访问到博客了，参考网上hexo github pages 教程
 - 主要步骤
-1. 安装node.js
-2. 安装git
-3. 安装hexo
-4. 更新一个测试页面
-5. 同步上传成功之后就可以访问
+    1. 安装node.js
+    2. 安装git
+    3. 安装hexo
+    4. 选一个喜欢的主题
+    5. 更新一个测试页面
+    6. 同步上传成功之后就可以访问
 
-- 按照教程按部就班，还是遇到了几个坑，另外查到了别的大牛提供的解决方法：
-    - 部署到github（hexo -d）这部时，会报错，而且是很多行很多行的错误，具体错误原因我也没弄清楚，git配置的问题，解决方法是:
-        1. git命令行打开博客目录
-        2. ` git config --global core.autocrlf false`
-        3. ` hexo clean`
-        4. ` hexo g`
-        5. ` hexo d`
+- 按照教程按部就班：
+    - 部署到github这步时，报错，如果报错信息能看出问题，就解决，看不出问题，就删除`.deploy_git`目录，然后
+        1. ` git config --global core.autocrlf false` // 解决不同操作系统维护博客的问题
+        2. ` hexo clean`
+        3. ` hexo g`
+        4. ` hexo d`
+- 维护进阶
+    - 在更换电脑之后发现博客无法推送和正常更新了，那是因为我们的master分支只有博客内容，并没有hexo博客的配置信息，所以以上初始化博客的过程又来了一遍，在重新初始化一遍博客以后
+        1. 新建hexo分支
+        2. 修改.gitingnore文件
+             ![alt](/img/ignore.png)
+        3. 推送hexo分支
+    > 这样以后我们在客户端就只用在hexo分支更新操作就可以了，就算换了电脑环境，也只用同步hexo分支代码
 
-   很可惜其余几个问题现在已经想不到了，下次记录问题要及时一点。。。
