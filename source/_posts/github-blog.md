@@ -2,7 +2,7 @@ title: 利用github和hexo建立个人博客
 date: 2017-03-04 16:38:29
 update: 2022-08-01 18:30:00
 categories: 技术
-abstract: 利用github pages建立个人博客
+description: 总体来说还是比较顺利，没有超过一天时间，在coding和github上都可以访问到博客了，参考网上hexo github pages 教程
 tags: 技术
 ---
 
@@ -17,6 +17,7 @@ tags: 技术
     4. 选一个喜欢的主题
     5. 更新一个测试页面
     6. 同步上传成功之后就可以访问
+<!-- more -->
 
 - 按照教程按部就班：
     - 部署到github这步时，报错，如果报错信息能看出问题，就解决，看不出问题，就删除`.deploy_git`目录，然后

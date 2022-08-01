@@ -82,9 +82,19 @@ jsonContent:
     comments: false
     link: false
     permalink: false
-    excerpt: false
+    excerpt: true
     categories: false
     tags: true
+
+
+# Content
+
+# 文章太长，截断按钮文字
+excerpt_link: more
+# 文章卡片右下角常驻链接，不需要请设置为 展开全文
+show_all_link: false
+# 数学公式
+mathjax: false
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
@@ -100,3 +110,7 @@ encrypt:
     enable: true
     default_abstract: 这是一篇加密文章
     default_message: 输入密码，查看文章
+
+auto_excerpt:
+  enable: false
+  length: 100
