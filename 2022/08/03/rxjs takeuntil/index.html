@@ -17,7 +17,7 @@
 <meta property="og:description" content="rxjs操作符之takeUntil">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://zhouyingqiu.github.io/img/take-until.jpg">
-<meta property="og:updated_time" content="2022-08-03T13:06:27.966Z">
+<meta property="og:updated_time" content="2022-08-03T13:14:07.083Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="rxjs-takeUntil">
 <meta name="twitter:description" content="rxjs操作符之takeUntil">
@@ -178,6 +178,7 @@
 <p>创建一个供需要自动取消oversver订阅的组件的基类</p>
 </blockquote>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">interface</span> ThyUnsubscribe <span class="keyword">extends</span> OnDestroy &#123;</span><br><span class="line">    ngUnsubscribe$: Subject&lt;<span class="built_in">any</span>&gt;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 封装一个基类，在组件销毁时触发一个observer</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">mixinUnsubscribe</span>&lt;<span class="title">T</span> <span class="title">extends</span> <span class="title">Constructor</span>&lt;</span>&#123;&#125;&gt;&gt;(base: T): Constructor&lt;ThyUnsubscribe&gt; &amp; T &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">class</span> Mixin <span class="keyword">extends</span> base &#123;</span><br><span class="line">        ngUnsubscribe$ = <span class="keyword">new</span> Subject();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">constructor</span>(<span class="params">...args: <span class="built_in">any</span>[]</span>) &#123;</span><br><span class="line">            <span class="keyword">super</span>(...args);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        ngOnDestroy() &#123;</span><br><span class="line">            <span class="keyword">this</span>.ngUnsubscribe$.next();</span><br><span class="line">            <span class="keyword">this</span>.ngUnsubscribe$.complete();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 组件类需要自动取消订阅的流</span></span><br><span class="line"><span class="meta">@Component</span>(&#123;...&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> SomeComponent <span class="keyword">extends</span> mixinUnsubscribe(MixinBase) <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">    <span class="keyword">this</span>.some$</span><br><span class="line">      .pipe(takeUntil(<span class="keyword">this</span>.ngUnsubscribe$))</span><br><span class="line">      .subscribe(<span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -379,14 +380,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">rxjs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">angular</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">恋爱</a>
               </li>
              
@@ -400,6 +393,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">rxjs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">angular</a>
               </li>
             
             <div class="clearfix"></div>
