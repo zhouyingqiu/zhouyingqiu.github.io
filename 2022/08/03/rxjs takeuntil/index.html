@@ -6,22 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://zhouyingqiu.github.io || http://z_xxxxxx.coding.me">
-  <title>5月西冲游记 | 无标题</title>
+  <title>rxjs-takeUntil | 无标题</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="5月西冲游记">
-<meta name="keywords" content="风景">
+  <meta name="description" content="rxjs操作符之takeUntil">
+<meta name="keywords" content="rxjs,angular">
 <meta property="og:type" content="article">
-<meta property="og:title" content="5月西冲游记">
-<meta property="og:url" content="https://zhouyingqiu.github.io || http://z_xxxxxx.coding.me/2017/05/08/5月/index.html">
+<meta property="og:title" content="rxjs-takeUntil">
+<meta property="og:url" content="https://zhouyingqiu.github.io || http://z_xxxxxx.coding.me/2022/08/03/rxjs takeuntil/index.html">
 <meta property="og:site_name" content="无标题">
-<meta property="og:description" content="5月西冲游记">
+<meta property="og:description" content="rxjs操作符之takeUntil">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://zhouyingqiu.github.io/img/photo_01.jpg">
-<meta property="og:updated_time" content="2022-08-03T13:02:03.098Z">
+<meta property="og:image" content="https://zhouyingqiu.github.io/%20%7C%7C%20http://z_xxxxxx.coding.me/2022/08/03/rxjs%20takeuntil/resources/81C03D472FB973D2F37A0C2003E0E1D0.png">
+<meta property="og:updated_time" content="2022-08-03T13:00:18.106Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="5月西冲游记">
-<meta name="twitter:description" content="5月西冲游记">
-<meta name="twitter:image" content="https://zhouyingqiu.github.io/img/photo_01.jpg">
+<meta name="twitter:title" content="rxjs-takeUntil">
+<meta name="twitter:description" content="rxjs操作符之takeUntil">
+<meta name="twitter:image" content="https://zhouyingqiu.github.io/%20%7C%7C%20http://z_xxxxxx.coding.me/2022/08/03/rxjs%20takeuntil/resources/81C03D472FB973D2F37A0C2003E0E1D0.png">
   
     <link rel="alternative" href="/atom.xml" title="无标题" type="application/atom+xml">
   
@@ -145,29 +145,38 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-5月" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-rxjs takeuntil" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      5月西冲游记
+      rxjs-takeUntil
     </h1>
   
 
         
-        <a href="/2017/05/08/5月/" class="archive-article-date">
-  	<time datetime="2017-05-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-08</time>
+        <a href="/2022/08/03/rxjs takeuntil/" class="archive-article-date">
+  	<time datetime="2022-08-03T12:30:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
     
-        <h3 id="5月西冲游记"><a href="#5月西冲游记" class="headerlink" title="5月西冲游记"></a>5月西冲游记</h3><!-- - [测试一下图片](/img/photo_01.jpg) -->
-<p><img src="/img/photo_01.jpg"></p>
-
+        <h4 id="takeUntil-notifier-ObservableInput-MonoTypeOperatorFunction"><a href="#takeUntil-notifier-ObservableInput-MonoTypeOperatorFunction" class="headerlink" title="takeUntil(notifier: ObservableInput): MonoTypeOperatorFunction"></a>takeUntil<t>(notifier: ObservableInput<any>): MonoTypeOperatorFunction<t></t></any></t></h4><blockquote>
+<p>让值传递，直到第二个 Observable(notifier)发出一个值。源Observer将取消订阅。</p>
+</blockquote>
+<h4 id="官网图解"><a href="#官网图解" class="headerlink" title="官网图解"></a>官网图解</h4><p><img src="resources/81C03D472FB973D2F37A0C2003E0E1D0.png" alt="WeChat81c03d472fb973d2f37a0c2003e0e1d0.png"></p>
+<h4 id="使用场景举例"><a href="#使用场景举例" class="headerlink" title="使用场景举例"></a>使用场景举例</h4><h5 id="例子1"><a href="#例子1" class="headerlink" title="例子1"></a>例子1</h5><blockquote>
+<p>当click事件触发后，源observer订阅被取消，控制台停止打印</p>
+</blockquote>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; interval, fromEvent, takeUntil &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> source = interval(<span class="number">1000</span>);</span><br><span class="line"><span class="keyword">const</span> clicks = fromEvent(<span class="built_in">document</span>, <span class="string">'click'</span>);</span><br><span class="line"><span class="keyword">const</span> result = source.pipe(takeUntil(clicks));</span><br><span class="line">result.subscribe(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(x));</span><br></pre></td></tr></table></figure>
+<h5 id="例子2"><a href="#例子2" class="headerlink" title="例子2"></a>例子2</h5><blockquote>
+<p>创建一个供需要自动取消oversver订阅的组件的基类</p>
+</blockquote>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">interface</span> ThyUnsubscribe <span class="keyword">extends</span> OnDestroy &#123;</span><br><span class="line">    ngUnsubscribe$: Subject&lt;<span class="built_in">any</span>&gt;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 封装一个基类，在组件销毁时触发一个observer</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">mixinUnsubscribe</span>&lt;<span class="title">T</span> <span class="title">extends</span> <span class="title">Constructor</span>&lt;</span>&#123;&#125;&gt;&gt;(base: T): Constructor&lt;ThyUnsubscribe&gt; &amp; T &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">class</span> Mixin <span class="keyword">extends</span> base &#123;</span><br><span class="line">        ngUnsubscribe$ = <span class="keyword">new</span> Subject();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">constructor</span>(<span class="params">...args: <span class="built_in">any</span>[]</span>) &#123;</span><br><span class="line">            <span class="keyword">super</span>(...args);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        ngOnDestroy() &#123;</span><br><span class="line">            <span class="keyword">this</span>.ngUnsubscribe$.next();</span><br><span class="line">            <span class="keyword">this</span>.ngUnsubscribe$.complete();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 组件类需要自动取消订阅的流</span></span><br><span class="line"><span class="meta">@Component</span>(&#123;...&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> SomeComponent <span class="keyword">extends</span> mixinUnsubscribe(MixinBase) <span class="keyword">implements</span> OnInit &#123;</span><br><span class="line">  ngOnInit() &#123;</span><br><span class="line">    <span class="keyword">this</span>.some$</span><br><span class="line">      .pipe(takeUntil(<span class="keyword">this</span>.ngUnsubscribe$))</span><br><span class="line">      .subscribe(<span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -180,7 +189,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">风景</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">rxjs</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">angular</a>
         		</li>
       		
 		</ul>
@@ -192,7 +205,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/记录//" class="article-tag-list-link color3">记录</a>
+        			<a href="/categories/技术//" class="article-tag-list-link color3">技术</a>
         		</li>
       		
 		</ul>
@@ -210,18 +223,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/07/25/两周年/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          我们的两周年
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/03/04/github-blog/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">利用github和hexo建立个人博客</div>
+    <a href="/2022/07/25/两周年/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我们的两周年</div>
       <i class="icon-circle-right"></i>
     </a>
   
