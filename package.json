@@ -8,7 +8,7 @@
   },
   "scripts": {
     "preview": "hexo clean && hexo g && live-server ./public",
-    "upd": "hexo clean && hexo g",
+    "upd": "hexo g",
     "d": "nvm use 12 && hexo d"
   },
   "dependencies": {

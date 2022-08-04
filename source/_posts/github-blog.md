@@ -3,7 +3,7 @@ date: 2017-03-04 16:38:29
 update: 2022-08-01 18:30:00
 categories: 技术
 description: 总体来说还是比较顺利，没有超过一天时间，在coding和github上都可以访问到博客了，参考网上hexo github pages 教程
-tags: 技术
+tags: [建站, blog, github]
 ---
 
 
